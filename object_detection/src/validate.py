@@ -1,7 +1,8 @@
+import os
 from ultralytics import YOLO
 
 # Ensure the model path is correctly specified for cross-platform compatibility
-model_path = r'runs/detect/train/weights/best.pt'
+model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models', 'weights', 'best.pt')
 
 # Attempt to load a custom model with error handling
 try:

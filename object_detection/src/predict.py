@@ -1,3 +1,4 @@
+import os
 import cv2
 import json
 import requests
@@ -86,7 +87,8 @@ def main(video_path, model_path, access_token, refresh_token, threshold=0.1):
                     # Crop the object using the bounding box coordinates
                     crop_object = frame[int(y1):int(y2), int(x1):int(x2)]
                     # Save the cropped object as an image
-                    evidence = 'object_detection/outputs/cropped_images/crop_object_' + str(i) + '.jpg'
+                    evidence = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'cropped_images', str(i) + '.jpg')
+                  
                     cv2.imwrite(evidence, crop_object)
                     post_monitoring_data('Mouse', evidence, access_token, refresh_token)
 
@@ -119,6 +121,6 @@ if __name__ == "__main__":
         print("Access token not obtained.")
     else:
         video_path = 0  # Change to your video path or keep 0 for webcam
-        #video_path = r'object_detection/data/test/desk_with_mouse.mp4'    
-        model_path = r'object_detection/models/weights/best.pt'
+        #video_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'test', 'desk_with_mouse.mp4')
+        model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models', 'weights', 'best.pt')
         main(video_path, model_path, access_token, refresh_token)    
