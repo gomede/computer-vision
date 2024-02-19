@@ -1,0 +1,14 @@
+# Django framework
+Django
+
+# Django REST Framework for building APIs
+djangorestframework
+
+# drf-yasg for generating real Swagger/OpenAPI 2.0 specifications from a Django Rest Framework API
+drf-yasg
+
+# psycopg2-binary for PostgreSQL adapter
+psycopg2-binary
+
+# djangorestframework-simplejwt for JWT authentication in Django REST Framework
+djangorestframework-simplejwt

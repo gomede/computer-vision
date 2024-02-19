@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # Define the database service
+  db:
+    image: postgres:13  # Use the official Postgres version 13 image
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persist database data
+    environment:
+      POSTGRES_DB: risk_manager  # Set the default database name
+      POSTGRES_USER: admin  # Set the default database user
+      POSTGRES_PASSWORD: Senai@2023  # Set the default database password
+
+  # Define the web application service
+  web:
+    build: .  # Build the Dockerfile in the current directory
+    command: python manage.py runserver 0.0.0.0:8000  # Command to start the Django server
+    volumes:
+      - .:/risk_manager  # Mount the project directory to the working directory in the container
+    ports:
+      - "8000:8000"  # Map port 8000 of the container to port 8000 on the host
+    depends_on:
+      - db  # Specify that the web service depends on the db service
+    environment:
+      - DATABASE_HOST=db  # Set the database host to the db service
+      - DATABASE_NAME=risk_manager  # Set the database name
+      - DATABASE_USER=admin  # Set the database user
+      - DATABASE_PASSWORD=Senai@2023  # Set the database password
+
+# Define volumes to persist data
+volumes:
+  postgres_data:  # Named volume for the Postgres data
