@@ -127,6 +127,8 @@ Follow these steps to set up and run the project on Windows:
    python src\predict.py
    ```
 
+Press key Q to stop.
+
 6. **Deactivate the Virtual Environment**
 
    Once you're done, you can deactivate the virtual environment:
@@ -178,6 +180,8 @@ For macOS and Linux systems, follow these instructions:
    ```bash
    python src/predict.py
    ```
+
+Press key Q to stop.
 
 6. **Deactivate the Virtual Environment**
 
