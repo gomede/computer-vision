@@ -1,0 +1,26 @@
+# requirements.txt documentation
+
+# opencv-python
+# Description: OpenCV (Open Source Computer Vision Library) is used for image and video processing tasks.
+# Use Case in Project: Used for reading, displaying, and processing images and video streams for object detection.
+opencv-python
+
+# ultralytics[yolov8]
+# Description: Ultralytics offers official YOLO (You Only Look Once) models. The YOLOv8 is a real-time object detection algorithm.
+# Use Case in Project: Utilized for performing object detection on images and video streams.
+ultralytics[yolov8]
+
+# PyYAML
+# Description: PyYAML is a YAML parser and emitter for Python.
+# Use Case in Project: Used for loading and parsing configuration files written in YAML format.
+PyYAML
+
+# requests
+# Description: Requests is an elegant and simple HTTP library for Python, built for human beings.
+# Use Case in Project: Used for making HTTP requests to download images or videos, or to interact with REST APIs for data.
+requests
+
+# getmac
+# Description: getmac is a package to retrieve the MAC address of system network interfaces and remote hosts on the local network.
+# Use Case in Project: May be used for network-related operations, such as uniquely identifying devices during data collection or processing.
+getmac
