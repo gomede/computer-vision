@@ -1,0 +1,14 @@
+2024-02-17 21:11:37 INFO: Starting training process.
+2024-02-17 21:13:38 INFO: Training completed successfully.
+2024-02-17 21:13:43 INFO: Validation Metrics:
+2024-02-17 21:13:43 INFO: - mAP50-95: 0.6640
+2024-02-17 21:13:43 INFO: - mAP50: 0.9950
+2024-02-17 21:13:43 INFO: - mAP75: 0.8900
+2024-02-17 21:13:43 INFO: - mAPs by Category: [    0.66402]
+2024-02-17 21:47:07 INFO: Starting training process.
+2024-02-18 12:05:08 INFO: Training completed successfully.
+2024-02-18 12:05:13 INFO: Validation Metrics:
+2024-02-18 12:05:13 INFO: - mAP50-95: 0.9391
+2024-02-18 12:05:13 INFO: - mAP50: 0.9950
+2024-02-18 12:05:13 INFO: - mAP75: 0.9950
+2024-02-18 12:05:13 INFO: - mAPs by Category: [    0.93912]
