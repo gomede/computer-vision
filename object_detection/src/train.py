@@ -4,8 +4,8 @@ import logging
 from ultralytics import YOLO
 
 # Define the log directory and file
-log_directory = r'object_detection/outputs/logs'
-log_file = r'object_detection/outputs/logs/training_log.txt'
+log_directory = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'logs')
+log_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'logs', 'training_log.txt')
 
 # Create the directory if it doesn't exist
 os.makedirs(log_directory, exist_ok=True)

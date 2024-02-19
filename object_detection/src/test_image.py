@@ -1,9 +1,10 @@
+import os
 import cv2
 from ultralytics import YOLO
 
 # Define paths using os.path.join for cross-platform compatibility
-model_path = r'object_detection/models/weights/best.pt'
-image_path = r'object_detection/data/test/desk_with_mouse.jpg'
+model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models', 'weights', 'best.pt')
+image_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'test', 'desk_with_mouse.jpg')
 
 # Initialize the YOLO model for inference
 infer = YOLO(model_path)
@@ -25,7 +26,7 @@ if hasattr(results[0], 'boxes'):
         # Crop the object using the bounding box coordinates
         crop_object = img[y1:y2, x1:x2]
         # Define a unique filename for each cropped image
-        crop_filename = f'object_detection/outputs/cropped_images/crop_object_{i}.jpg'
+        crop_filename = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'cropped_images', str(i) + '.jpg')
         # Save the cropped object as an image
         cv2.imwrite(crop_filename, crop_object)
     print(f"{len(boxes)} objects cropped and saved.")

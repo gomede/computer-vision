@@ -1,10 +1,11 @@
+import os
 import cv2
 from ultralytics import YOLO
 
 video_path = r'object_detection/data/test/desk_with_mouse.mp4'
 
 # Load the model
-model_path = r'object_detection/models/weights/best.pt'
+model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models', 'weights', 'best.pt')
 model = YOLO(model_path)  # Load a custom model
 
 # Detection threshold
@@ -40,7 +41,8 @@ while True:
                 # Crop the object using the bounding box coordinates
                 crop_object = frame[int(y1):int(y2), int(x1):int(x2)]
                 # Save the cropped object as an image
-                cv2.imwrite('object_detection/outputs/cropped_images/crop_object_' + str(i) + '.jpg', crop_object)
+                evidence = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'cropped_images', str(i) + '.jpg')
+                cv2.imwrite(evidence, crop_object)
 
     # Display the processed frame
     cv2.imshow("Detections", frame)
